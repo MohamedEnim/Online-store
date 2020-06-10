@@ -1,0 +1,49 @@
+<div class="container align">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 40rem;">
+                <p>First time here? <a [routerLink]="['/register']">Create an Account.</a> </p>
+                <div class="alert alert-danger" *ngIf= "!isEnabel">
+                    <h4>We coudn't sign you in.</h4>
+                    <h4>Userame or Password is incorrect </h4>
+                </div>
+            </div>
+            <br>
+            <div class="card" style="width: 40rem;">
+               
+                <div class="card-header">
+                    Sign In:
+                   </div>
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()" #formSignIn="ngForm">
+
+                        <div class="form-group">
+                            <label class="control-label" for="username">Userame:</label>
+                            <input class="form-control" id="username"  name="username" type="text"
+                            ngModel
+                            required
+                            #lusername="ngModel">
+                            <div class="alert alert-danger" *ngIf="lusername.touched && lusername.invalid">
+                                Userame Name is required
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label class="control-label" for="password">Password:</label>
+                            <input class="form-control" id="password"  name="password" type="text"
+                            ngModel
+                            required
+                            #lpassword="ngModel">
+                            <div class="alert alert-danger" *ngIf="lpassword.touched && lpassword.invalid">
+                                Password is required
+                            </div>
+                        </div>
+            
+                        <button type="submit" class="btn btn-primary" [disabled]="!formSignIn.valid">Sign In</button>
+                    </form>
+                </div>
+              </div>   
+    </div>
+    </div>
+    </div>
+    

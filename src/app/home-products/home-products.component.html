@@ -1,0 +1,13 @@
+<div class="container" >
+    <div class="row align">
+      <ng-container *ngFor="let categoryItem of categoryItems">
+        <ng-container *ngFor="let productItem of categoryItem.products; let i=index">
+          <div class="col-4">
+            <app-card [productItem]="productItem"></app-card>
+          </div>
+      </ng-container>
+      </ng-container>
+
+    </div>
+  </div>
+  

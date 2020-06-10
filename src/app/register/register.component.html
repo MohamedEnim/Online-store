@@ -1,0 +1,70 @@
+<div class="container align">
+    <div class="row">
+        <div class="col">
+            
+            <div class="card">
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()" #formRegister="ngForm">
+
+                        <div class="form-group">
+                            <label class="control-label" for="name">First Name:</label>
+                            <input class="form-control" id="fname"  name="fname" type="text"
+                            ngModel
+                            required
+                            #fname="ngModel">
+                            <div class="alert alert-danger" *ngIf="fname.touched && fname.invalid">
+                                First Name is required
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label class="control-label" for="lname">Last Name:</label>
+                            <input class="form-control" id="lname"  name="lname" type="text"
+                            ngModel
+                            required
+                            #lname="ngModel">
+                            <div class="alert alert-danger" *ngIf="lname.touched && lname.invalid">
+                                Last Name is required
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label class="control-label" for="email">Email:</label>
+                            <input class="form-control" type="email" id="email"  name="email"
+                            ngModel
+                            required
+                            #femail="ngModel">
+                            <div class="alert alert-danger" *ngIf="femail.touched && femail.invalid">
+                                Email is required
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label class="control-label" for="lusername">Userame:</label>
+                            <input class="form-control" id="lusername"  name="lusername" type="text"
+                            ngModel
+                            required
+                            #lusername="ngModel">
+                            <div class="alert alert-danger" *ngIf="lusername.touched && lusername.invalid">
+                                Userame Name is required
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label class="control-label" for="lpassword">Password:</label>
+                            <input class="form-control" id="lpassword"  name="lpassword" type="text"
+                            ngModel
+                            required
+                            #lpassword="ngModel">
+                            <div class="alert alert-danger" *ngIf="lpassword.touched && lpassword.invalid">
+                                Password is required
+                            </div>
+                        </div>
+            
+                        <button type="submit" class="btn btn-primary" [disabled]="!formRegister.valid">Register</button>
+                    </form>
+                </div>
+              </div>
+    </div>
+    </div>
+    </div>

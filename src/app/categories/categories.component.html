@@ -1,0 +1,11 @@
+
+<nav class="navbar-dark bg-dark sidenavbar">    
+    <ul  class="navbar-nav flex-column ">
+        <li class="nav-item" style="cursor: pointer;" >
+                <a class="nav-link" (click)="onCategories()">{{ 'All Categories' }}</a>
+        </li>
+        <li *ngFor="let category of categoryItems; let i=index " class="nav-item" style="cursor: pointer;" >
+            <a class="nav-link" (click)="onSelect(category.nameCateg)">{{ category.nameCateg }}</a>
+        </li>
+    </ul>  
+</nav>

@@ -1,0 +1,25 @@
+<h1 class="sel">Orders</h1>
+<br>
+<ng-container>
+<table class="table">
+    <thead>
+        <tr>
+            <th >Name</th>
+            <th class="text-center" style="width: 230px;">Date</th>
+            <th class="text-right" style="width: 200px;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Order of Orders | async as ordes ">
+           
+            <td> {{ Order.username }} </td>
+            <td class="text-center"> 
+                {{ Order.date }}
+            </td>
+            <td class="text-right"><a (click)="onOrderDetail(Order.userId, Order.id)" style="cursor: pointer;" >Edit</a></td>
+        </tr>
+       
+    </tbody>
+    
+</table>
+

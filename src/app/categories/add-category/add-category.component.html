@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+        <form (ngSubmit)="onSubmit()" #formAddCategory="ngForm">
+            <div class="form-group">
+                <label for="nameCateg">Name Category</label>
+                <input id="nameCateg" class="form-control" name="nameCateg"
+                ngModel
+                required
+                #fnameCateg="ngModel">
+                <div class="alert alert-danger" *ngIf="fnameCateg.touched && fnameCateg.invalid">
+                    Name Category is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="numProd">Number of Products</label>
+                <input type="number" id="numProd" class="form-control" name="numProd" 
+                ngModel
+                required
+                #fnumProd="ngModel">
+                <div class="alert alert-danger" *ngIf="fnumProd.touched && fnumProd.invalid">
+                    Number of Products is required
+                </div>
+            </div>
+            <button type="submit"  class="btn btn-primary" [disabled]="!formAddCategory.valid">Add Products</button>
+        </form>
+    </div>
+    </div>
+    </div>
+    

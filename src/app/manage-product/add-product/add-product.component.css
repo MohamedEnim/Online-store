@@ -1,0 +1,23 @@
+.row{
+    margin-top: 80px;
+}
+
+.card{
+    margin-bottom: 20px;
+}
+
+.card-footer{
+    padding: 0;
+}
+
+input.ng-touched.ng-invalid{
+    border-left: 5px solid red;
+}
+
+input.ng-valid{
+    border-left: 5px solid green;
+}
+
+button.tab{
+    margin-left: 20px;
+}

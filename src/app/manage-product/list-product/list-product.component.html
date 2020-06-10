@@ -1,0 +1,41 @@
+<div class="row mar">
+    <label>Manage products</label>
+</div>
+<br>
+<div class="row">
+    <input type="text" class="form-control" placeholder="Search..." #query
+    (keyup)="onFilter(query.value)">
+</div>
+<br>
+<div class="row"  >
+    <table class="table table-striped"  [svData]="data" #sv="svDataTable" [svRowsOnPage]="5" svSortBy="name" svSortOrder="asc">
+        <thead>
+        <tr>
+            <th>
+                <sv-default-sorter by="name">Name</sv-default-sorter>
+            </th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+        </thead>   
+        <tbody >        
+        <tr  *ngFor="let item of sv.data; let i=index">
+      
+            <td>{{ item.nameProd }}</td>
+            <td>{{ item.price }}</td>
+            <td ><a [hidden]="!isAdmin" (click)="onEdit(item.key, item.id, item.nameProd)" style="cursor: pointer;" >Edit</a></td>
+        
+        </tr>
+   
+        </tbody>
+  
+        <tfoot>
+        <tr>
+            <td colspan="4">
+                <sv-bootstrap-paginator [rowsOnPageSet]="[5, 10, 25]"></sv-bootstrap-paginator>
+            </td>
+        </tr>
+        </tfoot>
+    
+    </table> 
+</div>

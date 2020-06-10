@@ -1,0 +1,14 @@
+
+<div class="container">
+    <div class="row">
+        <h1>Shipping</h1>
+    </div>  
+    <div class="row" >
+        <div class="col-6">
+            <app-shipping></app-shipping>
+        </div>
+        <div class="col-6" *ngIf=" obsShoppings | async as shoppings">
+            <app-shopping-cart-summary [shoppings]="shoppings"></app-shopping-cart-summary>
+        </div>
+    </div>
+</div>

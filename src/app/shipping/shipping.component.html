@@ -1,0 +1,43 @@
+<div class="container">
+<div class="row">
+    <div class="col">
+    <form (ngSubmit)="onSubmit()" #formShipping="ngForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" class="form-control" name="name"
+            ngModel
+            required
+            #fname="ngModel">
+            <div class="alert alert-danger" *ngIf="fname.touched && fname.invalid">
+                Name is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="adress1 adress2">Adress</label>
+            <input type="text" id="adress1" class="form-control" name="adress1" placeholder="Line 1"
+            ngModel
+            required
+            #fadress="ngModel">
+            <div class="alert alert-danger" *ngIf="fadress.touched && fadress.invalid">
+                Adress is required
+            </div>
+            <br>
+            <input type="text" id="adress2" class="form-control" name="adress2" placeholder="Line 2"
+            ngModel
+           >
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input id="city" class="form-control" name="city" type="text"
+            ngModel
+            required
+            #fcity="ngModel">
+            <div class="alert alert-danger" *ngIf="fcity.touched && fcity.invalid">
+                City is required
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!formShipping.valid">Place Order</button>
+    </form>
+</div>
+</div>
+</div>

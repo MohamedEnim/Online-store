@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+        <form (ngSubmit)="onSubmit()" #formNewProducts="ngForm">
+            <div class="form-group">
+                <label for="nameCateg">Select Category</label>
+                <select id="nameCateg"  class="form-control"
+                name="nameCateg"
+                [(ngModel)]="nameCateg"
+                required>
+                  <option  *ngFor="let categoryItem of  categoryItems" [value]="categoryItem.nameCateg"
+               >{{ categoryItem.nameCateg }}</option> 
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="numProd">Number of Products</label>
+                <input type="number" id="numProd" class="form-control" name="numProd" 
+                [(ngModel)]="numProd"
+                required
+                #fnumProd="ngModel">
+                <div class="alert alert-danger" *ngIf="fnumProd.touched && fnumProd.invalid">
+                    Number of Products is required
+                </div>
+            </div>
+            <button type="submit"  class="btn btn-primary" [disabled]="!formNewProducts.valid">Add Products</button>
+        </form>
+    </div>
+    </div>
+    </div>
